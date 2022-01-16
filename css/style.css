@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.player {
+  width: max-content;
+  height: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.volume__icon {
+  content: url(../img/volume.svg);
+}
+
+.p-icn.play {
+  content: url(../img/play.svg);
+}
+.p-icn.pause {
+  content: url(../img/pause.svg);
+}
+
+.controllers {
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.line {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.line__back{
+  width: 100%;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s linear;
+}
+
+.line__red{
+  height: 100%;
+  width: 10%;
+  background: rgba(255, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.line__red::after{
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: red;
+  border-radius: 50%;
+  transform: translateX(0px);
+  transition: 0.1s linear;
+}
+
+.line:hover .line__back{
+  height: 100%;
+}
+
+.line:hover .line__red::after{
+  width: 25px;
+  height: 25px;
+  transform: translateX(5px);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.line:hover .line__red{
+  background: red;
+}
+
+.line__white{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.time {
+  color: white;
+}
+
+.time__prog,
+.time__result {
+  color: white;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume__line {
+  width: 100px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.2s linear;
+}
+
+/* .volume:hover .volume__line {
+  width: 100px;
+} */
+
+.volume__cont{
+  width: 50%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.volume__cont::after{
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  transform: translateX(5px);
+}
